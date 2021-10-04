@@ -13,18 +13,6 @@ export default function App() {
   //const url = `https://pixabay.com/api/?key=${key}&q=${FormData.search}&image_type=photo&pretty=true&safesearch=false&per_page=${FormData.searchLenght}`;
 
   // useEffect(async () => {
-  //   let response = await axios(url);
-  //   let result = await response.data;
-  //   // setFormData(user);
-  //   // console.log(result);
-
-  //   // axios.get(url).then((res) => {
-  //   //   setFormData(res.data);
-  //   //   console.log(res.data.hits);
-  //   // }, []);
-  // });
-
-  // useEffect(async () => {
   //   const result = await axios(
   //     'https://hn.algolia.com/api/v1/search?query=redux',
   //   );
