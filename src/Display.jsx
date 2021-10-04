@@ -3,7 +3,7 @@ import React from 'react';
 export default function Display(Image) {
   const { type, previewURL } = Image.Image;
   const [t1, t2, t3] = Image.Image.tags.split(',');
-  // const [t1, t2, t3] = Image.Image.tags.split(',');
+  
   console.log(Image.Image);
   return (
     <>
