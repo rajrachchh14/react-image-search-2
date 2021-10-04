@@ -1,6 +1,9 @@
 import React from 'react';
 
-export default function Form() {
+export default function Form({ Value, InputEventHook }) {
+  // console.log({ Value });
+  // console.log(InputEventHook);
+  const { search, searchLenght } = Value;
   return (
     <>
       <div className="col-12 col-lg-12">
@@ -13,12 +16,16 @@ export default function Form() {
               type="text"
               className="form-control"
               placeholder="Search Image"
+              name="search"
+              value={search}
+              onChange={InputEventHook('search')}
+              // , InputEventHook
             />
           </div>
           <div className="col-lg-6 col-md-6">
             <select className="form-select">
-              <option value="5" defaultValue>
-                5
+              <option value={searchLenght} defaultValue>
+                {searchLenght}
               </option>
               <option value="10">10</option>
               <option value="15">15</option>
