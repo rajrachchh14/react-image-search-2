@@ -5,7 +5,7 @@ import Display from './Display';
 
 export default function App() {
   const [FormData, setFormData] = useState({
-    search: 'apple',
+    search: '',
     searchLenght: '5', // ?
   });
 
@@ -24,6 +24,7 @@ export default function App() {
         (result) => {
           setImage(result.hits); // HERE IS ARRAY OF DATA STORE && Chk Also Console
           // setIsLoading(false);
+          // console.log(FormData.search, 'state');
         },
 
         (error) => {
@@ -31,11 +32,11 @@ export default function App() {
           // setError(error);
         }
       );
-  }, []);
+  }, [FormData.search]);
   //console.log(url);
 
   const ChangeEvent = (InputEventHook) => (e) => {
-    console.log('s');
+    // console.log(FormData.search, 'ev');
     setFormData((prevState) => ({
       ...prevState,
       [InputEventHook]: e.target.value,

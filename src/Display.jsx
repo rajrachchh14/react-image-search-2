@@ -3,8 +3,7 @@ import React from 'react';
 export default function Display(Image) {
   const { type, previewURL } = Image.Image;
   const [t1, t2, t3] = Image.Image.tags.split(',');
-  
-  console.log(Image.Image);
+
   return (
     <>
       <div className="col-12 col-lg-3 p-2">
