@@ -1,8 +1,6 @@
 import React from 'react';
 
 export default function Form({ Value, InputEventHook }) {
-  // console.log({ Value });
-  // console.log(InputEventHook);
   const { search, searchLenght } = Value;
   return (
     <>
