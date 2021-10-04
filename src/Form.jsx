@@ -4,6 +4,7 @@ export default function Form({ Value, InputEventHook }) {
   const { search, searchLenght } = Value;
   return (
     <>
+      <p>Pagnination Panding & Per image Load Panding</p>
       <div className="col-12 col-lg-12">
         <div className="text-center p-2">
           <h3>Search Image & Filter</h3>
