@@ -11,33 +11,31 @@ export default function App() {
 
   const [Image, setImage] = useState([]);
 
-  const key = '23664585-b63ea49e0412f4d30e9b28cc8';
-  const url = `https://pixabay.com/api/?key=${key}&q=${FormData.search}&image_type=photo&pretty=true&safesearch=false&per_page=${FormData.searchLenght}`;
-
   useEffect(() => {
-    axios.get(url).then((res) => {
-      const result = res.data.hits;
-      console.log(result);
-      // setImage(result);
-      // this.setState({ persons });
-    });
-  });
+    const key = '23664585-b63ea49e0412f4d30e9b28cc8';
+    const url = `https://pixabay.com/api/?key=${key}&q=${FormData.search}&image_type=photo&pretty=true&safesearch=false&per_page=${FormData.searchLenght}`;
 
-  // useEffect(async () => {
-  //   const result = await axios(
-  //     'https://hn.algolia.com/api/v1/search?query=redux',
-  //   );
-  // setTimeout(() => {
-  //   setPosts([
-  //     { id: 0, content: 'foo' },
-  //     { id: 1, content: 'bar' },
-  //   ]);
-  //   console.log(posts);
-  // }, 1000);
-  // }, []);
+    // const key = '23664585-b63ea49e0412f4d30e9b28cc8';
+    // const url = `https://pixabay.com/api/?key=${key}&q=${FormData.search}&image_type=photo&pretty=true&safesearch=false&per_page=10`;
+    // console.log(url);
+    fetch(url)
+      .then((response) => response.json())
+      .then(
+        (result) => {
+          setImage(result.hits); // HERE IS ARRAY OF DATA STORE && Chk Also Console
+          // setIsLoading(false);
+        },
+
+        (error) => {
+          // setIsLoading(true);
+          // setError(error);
+        }
+      );
+  }, []);
+  //console.log(url);
 
   const ChangeEvent = (InputEventHook) => (e) => {
-    // console.log('s');
+    console.log('s');
     setFormData((prevState) => ({
       ...prevState,
       [InputEventHook]: e.target.value,
@@ -50,7 +48,10 @@ export default function App() {
       <div className="container">
         <div className="row d-flex">
           <Form Value={FormData} InputEventHook={ChangeEvent} />
-          <Display />
+
+          {Image.map((data) => (
+            <Display key={data.id} Image={data} />
+          ))}
         </div>
       </div>
     </>
