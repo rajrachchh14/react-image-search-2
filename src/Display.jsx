@@ -3,7 +3,7 @@ import React from 'react';
 export default function Display() {
   return (
     <>
-      <div className="col-12 col-lg-3 p-5">
+      <div className="col-12 col-lg-3 p-2">
         <div className="card" style={{ width: '18rem' }}>
           {/* <img src="..." class="card-img-top" alt="..." /> */}
           <div className="card-body">

@@ -8,20 +8,20 @@ export default function Form() {
           <h3>Search Image & Filter</h3>
         </div>
         <div className="row">
-          <div className="col-lg-6">
+          <div className="col-lg-6 col-md-6">
             <input
               type="text"
               className="form-control"
               placeholder="Search Image"
             />
           </div>
-          <div className="col-lg-6">
+          <div className="col-lg-6 col-md-6">
             <select className="form-select">
-              <option value="1" defaultValue>
+              <option value="5" defaultValue>
                 5
               </option>
-              <option value="2">10</option>
-              <option value="3">15</option>
+              <option value="10">10</option>
+              <option value="15">15</option>
             </select>
           </div>
         </div>
