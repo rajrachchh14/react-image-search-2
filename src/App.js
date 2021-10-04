@@ -9,8 +9,19 @@ export default function App() {
     searchLenght: '5', // ?
   });
 
-  // const key = '23664585-b63ea49e0412f4d30e9b28cc8';
-  //const url = `https://pixabay.com/api/?key=${key}&q=${FormData.search}&image_type=photo&pretty=true&safesearch=false&per_page=${FormData.searchLenght}`;
+  const [Image, setImage] = useState([]);
+
+  const key = '23664585-b63ea49e0412f4d30e9b28cc8';
+  const url = `https://pixabay.com/api/?key=${key}&q=${FormData.search}&image_type=photo&pretty=true&safesearch=false&per_page=${FormData.searchLenght}`;
+
+  useEffect(() => {
+    axios.get(url).then((res) => {
+      const result = res.data.hits;
+      console.log(result);
+      // setImage(result);
+      // this.setState({ persons });
+    });
+  });
 
   // useEffect(async () => {
   //   const result = await axios(
