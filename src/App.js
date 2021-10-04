@@ -1,15 +1,35 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import Form from './Form';
 import Display from './Display';
 
 export default function App() {
-  // const key = '23664585-b63ea49e0412f4d30e9b28cc8';
-  // const url = `https://pixabay.com/api/?key=${key}&q=${search}&image_type=photo&pretty=true&safesearch=false&per_page=10`;
-
   const [FormData, setFormData] = useState({
-    search: '',
-    searchLenght: '5',
+    search: 'apple',
+    searchLenght: '5', // ?
   });
+
+  const key = '23664585-b63ea49e0412f4d30e9b28cc8';
+  const url = `https://pixabay.com/api/?key=${key}&q=${FormData.search}&image_type=photo&pretty=true&safesearch=false&per_page=${FormData.searchLenght}`;
+
+  useEffect(() => {
+    axios.get(url).then((res) => {
+      // setPosts(res.data.slice(0, 10));
+      console.log(res);
+    });
+
+    // useEffect(async () => {
+    //   const result = await axios(
+    //     'https://hn.algolia.com/api/v1/search?query=redux',
+    //   );
+    // setTimeout(() => {
+    //   setPosts([
+    //     { id: 0, content: 'foo' },
+    //     { id: 1, content: 'bar' },
+    //   ]);
+    //   console.log(posts);
+    // }, 1000);
+  }, []);
 
   const ChangeEvent = (InputEventHook) => (e) => {
     console.log('s');
