@@ -17,7 +17,7 @@ export default function Form() {
           </div>
           <div className="col-lg-6">
             <select className="form-select">
-              <option value="1" selected>
+              <option value="1" defaultValue>
                 5
               </option>
               <option value="2">10</option>
