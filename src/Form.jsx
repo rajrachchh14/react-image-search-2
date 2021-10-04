@@ -23,9 +23,12 @@ export default function Form({ Value, InputEventHook }) {
             />
           </div>
           <div className="col-lg-6 col-md-6">
-            <select className="form-select">
-              <option value={searchLenght} defaultValue>
-                {searchLenght}
+            <select
+              className="form-select"
+              onChange={InputEventHook('searchLenght')}
+            >
+              <option value="5" defaultValue>
+                5
               </option>
               <option value="10">10</option>
               <option value="15">15</option>

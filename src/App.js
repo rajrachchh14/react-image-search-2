@@ -24,7 +24,7 @@ export default function App() {
         (result) => {
           setImage(result.hits); // HERE IS ARRAY OF DATA STORE && Chk Also Console
           // setIsLoading(false);
-          // console.log(FormData.search, 'state');
+          console.log('state');
         },
 
         (error) => {
@@ -32,7 +32,7 @@ export default function App() {
           // setError(error);
         }
       );
-  }, [FormData.search]);
+  }, [FormData]);
   //console.log(url);
 
   const ChangeEvent = (InputEventHook) => (e) => {
