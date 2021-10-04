@@ -9,30 +9,36 @@ export default function App() {
     searchLenght: '5', // ?
   });
 
-  const key = '23664585-b63ea49e0412f4d30e9b28cc8';
-  const url = `https://pixabay.com/api/?key=${key}&q=${FormData.search}&image_type=photo&pretty=true&safesearch=false&per_page=${FormData.searchLenght}`;
+  // const key = '23664585-b63ea49e0412f4d30e9b28cc8';
+  //const url = `https://pixabay.com/api/?key=${key}&q=${FormData.search}&image_type=photo&pretty=true&safesearch=false&per_page=${FormData.searchLenght}`;
 
-  useEffect(() => {
-    axios.get(url).then((res) => {
-      // setPosts(res.data.slice(0, 10));
-      console.log(res);
-    });
+  // useEffect(async () => {
+  //   let response = await axios(url);
+  //   let result = await response.data;
+  //   // setFormData(user);
+  //   // console.log(result);
 
-    // useEffect(async () => {
-    //   const result = await axios(
-    //     'https://hn.algolia.com/api/v1/search?query=redux',
-    //   );
-    // setTimeout(() => {
-    //   setPosts([
-    //     { id: 0, content: 'foo' },
-    //     { id: 1, content: 'bar' },
-    //   ]);
-    //   console.log(posts);
-    // }, 1000);
-  }, []);
+  //   // axios.get(url).then((res) => {
+  //   //   setFormData(res.data);
+  //   //   console.log(res.data.hits);
+  //   // }, []);
+  // });
+
+  // useEffect(async () => {
+  //   const result = await axios(
+  //     'https://hn.algolia.com/api/v1/search?query=redux',
+  //   );
+  // setTimeout(() => {
+  //   setPosts([
+  //     { id: 0, content: 'foo' },
+  //     { id: 1, content: 'bar' },
+  //   ]);
+  //   console.log(posts);
+  // }, 1000);
+  // }, []);
 
   const ChangeEvent = (InputEventHook) => (e) => {
-    console.log('s');
+    // console.log('s');
     setFormData((prevState) => ({
       ...prevState,
       [InputEventHook]: e.target.value,
